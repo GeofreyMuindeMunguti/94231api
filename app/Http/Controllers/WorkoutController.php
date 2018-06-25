@@ -22,7 +22,8 @@ class WorkoutController extends Controller
 
 		DB::table('user_profiles_94231s')->insert($data);
  
-		return response()->json($data);
+		return response()->json('sucessfully recorded workoutplan');
+
 	}
 
    public function showWorkout()
