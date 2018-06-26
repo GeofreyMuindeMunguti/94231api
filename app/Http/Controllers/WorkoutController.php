@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Gym_location_94231;
-use App\user_profiles_94231;
+use App\User_profiles_94231;
 
 
 class WorkoutController extends Controller
@@ -26,14 +26,16 @@ class WorkoutController extends Controller
 
 	}
 
-   public function showWorkout()
+   public function showWorkout(Request $req)
    {
+     $email =$req->input('email');
 
-   	$data = user_profiles_94231::all();
+
+   	$data = user_profiles_94231::where('email',$email)->get();
 
    	return response()->json($data); 
    }
-   
+
    public function showGyminlocation(Request $req)
    {
 
