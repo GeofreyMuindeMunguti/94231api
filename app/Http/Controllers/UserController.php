@@ -26,7 +26,7 @@ class UserController extends Controller
 		$first_name = $req->input('first_name');
 		$last_name = $req->input('last_name');
 		$email = $req->input('email');
-  $password=$req->input('password');
+   $password=$req->input('password');
 		//$password_string = mysqli_real_escape_string($_POST["password"]);
               // The value of $password_hash
               // should similar to the following:
@@ -34,8 +34,8 @@ class UserController extends Controller
        // $password_hash = Crypt::encryptString($password);
 		//$password=$req->input('password');
 
-       //$password_hash= Hash::make('password');
-		$data = array('first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'password'=>$password);
+    $password_hash= Hash::make('password');
+		$data = array('first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'password'=>$password_hash);
 
 		DB::table('user_94231s')->insert($data);
  
