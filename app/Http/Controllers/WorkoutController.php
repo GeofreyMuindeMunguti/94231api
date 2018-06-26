@@ -33,6 +33,7 @@ class WorkoutController extends Controller
 
    	return response()->json($data); 
    }
+   
    public function showGyminlocation(Request $req)
    {
 

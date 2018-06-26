@@ -39,15 +39,6 @@ class GymController extends Controller
    }
 
     
-   public function filtergym(Request $req)
-   {
-      
-     $activities->$req->input('activities');
-
-    $data = Gym_location_94231::where('activities',$activities)->get();
-
-    return response()->json($data);
-   }
     
    
     //
