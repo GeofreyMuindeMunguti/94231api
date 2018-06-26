@@ -7,5 +7,6 @@
     <div> 
     <p align="center">Welcome to SmartGym.... Enjoy</p>
     </div>
+    <p></p>
 </body>
 </html>
