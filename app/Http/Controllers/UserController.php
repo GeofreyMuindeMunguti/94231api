@@ -42,6 +42,7 @@ class UserController extends Controller
 		return response()->json($data);
 	}
 
+
 	public function showgymusers()
 	{
 		$data = User_94231::all();
@@ -49,6 +50,7 @@ class UserController extends Controller
 		return response()->json($data);
 
 	}
+
 
 	public function loginuser(Request $req)
 	{
@@ -67,12 +69,12 @@ class UserController extends Controller
 
           }
               else 
-      {
-        $pass= $check[0]['password'];
+        {
+         $pass = $check[0]['password'];
         
-        $rlpass =  Crypt::decryptString($pass);
+         $rlpass= Hash::make('password');
         //echo $rlpass;
-        if($password == $rlpass)
+        if($pass == $rlpass)
         {
         	$user = User_94231::where('email',$email)->get();
 
