@@ -24,7 +24,7 @@ class InstructorController extends Controller
 
 		DB::table('instructor_94231s')->insert($data);
  
-		return response()->json($data);
+		return response()->json('success');
 	}
 
 	public function showInstructor()

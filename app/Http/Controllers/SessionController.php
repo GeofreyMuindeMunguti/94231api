@@ -24,7 +24,7 @@ class SessionController extends Controller
 
 		DB::table('sessions_94231s')->insert($data);
  
-		return response()->json($data);
+		return response()->json('success');
 	}
 
 	function showSession(Request $req)

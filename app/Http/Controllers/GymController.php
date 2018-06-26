@@ -18,7 +18,7 @@ class GymController extends Controller
 
 		DB::table('gym_location_94231s')->insert($data);
  
-		return response()->json($data);
+		return response()->json('success');
 	}
 
    public function gymshow()
@@ -28,6 +28,27 @@ class GymController extends Controller
 
    	return response()->json($data); 
    }
+
+   public function gymnear(Request $req)
+   {
+    $location->$req->input('location');
+
+    $data = Gym_location_94231::where('location',$location)->get();
+
+    return response()->json($data);
+   }
+    
+   public function filtergym(Request $req)
+   {
+    $location->$req->input('location');
+     $activities->$req->input('activities');
+
+
+    $data = Gym_location_94231::where('location',$location)->where('activity',$activities)->get();
+
+    return response()->json($data);
+   }
+    
    
     //
 }

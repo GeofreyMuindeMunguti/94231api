@@ -39,4 +39,5 @@ Route::get('/showWorkout','WorkoutController@showWorkout');//shows all work out 
 Route::get('/showSessions','SessionController@showSession');//user view all their sessions 
 Route::get('/sessionprogress','SessionController@sessionProgress');//check date of start and current date in sessions amongsth other data of the session
 Route::get('/gyminlocation','WorkoutController@showGyminlocation');//show gyms close to user location
+Route::get('/gymnear','GymController@gymnear');
 Route::get('/showgyminstructor','InstructorController@showgyminstructor');//show instructors in a certain gym
