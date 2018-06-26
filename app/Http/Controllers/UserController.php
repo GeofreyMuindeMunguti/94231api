@@ -39,7 +39,7 @@ class UserController extends Controller
 
 		DB::table('user_94231s')->insert($data);
  
-		return response()->json($data);
+		return response()->json('sucess');
 	}
 
 
