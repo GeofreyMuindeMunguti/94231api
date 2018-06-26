@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\User_94231;
 use Illuminate\Support\Carbon;
-use App\sessions_94231;
+use App\Sessions_94231;
 
 class SessionController extends Controller
 {
