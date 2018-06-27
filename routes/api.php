@@ -18,17 +18,26 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 
 });
-Route::namespace('api/Auth')->middleware('auth:api')->get('/user', function (Request $request) {
-    Route::post('/create/user','Auth/RegisterController@create');
+
+Route::namespace('Auth')->prefix('user')->group(function () {
+     Route::post('/create','RegisterController@create');
+     Route::post('/login','LoginController@login');
+    // Route::post('/create', function(Request $request) {
+    // 	return $request;
+    // });
     
 });
+
+Auth::routes();
+
 Route::post('save/gym','GymController@save');//save a gym..check
-Route::post('save/user','UserController@save');// register a gymuser..check
+//Route::post('register','Auth/RegisterController@create');// register a gymuser..check
 Route::post('save/instructor','InstructorController@save');//register instructor..check
 Route::post('save/workout','WorkoutController@save');//create and save workout plan..check
 Route::post('save/session','SessionController@save');//create and save session..check
-Route::post('loginuser','UserController@loginuser');//login the existing user
- 
+Route::post('/loginuser','UserController@loginuser');//login the existing user
+ Route::post('/register','UserController@save');//login the existing user
+
 
 Route::get('/gymshow','GymController@gymshow');//view all gyms..check
 Route::get('/showgymusers','UserController@showgymusers');//show gymusers..admin

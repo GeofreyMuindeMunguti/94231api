@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 //use Illuminate\Support\Facades\Auth;
 use App\User_94231;
@@ -59,43 +60,13 @@ class UserController extends Controller
        
 		//$user = User_94231::where('email',$email)->where('password',$password)->get();
 
-        $check = User_94231::where('email',$email)->get();
-        $data = json_decode($check, true);
-         if (empty($data))
-         {
-               return response()->json('user doesnt exist');
-                //return response()->json('successful login');
-
-
-          }
-              else 
+        if(Auth::attempt(['email'=>$email, 'password'=>$password]))
         {
-         $pass = $check[0]['password'];
-        
-         //$rlpass= Hash::make('password');
-        //echo $rlpass;
-        if($pass == $password)
-        {
-        	$user = User_94231::where('email',$email)->get();
-
-        	$data = json_decode($user, true);
-            if (!empty($data))
-            {
-               return response()->json('successful login');
-                //return response()->json('successful login');
-
-
-               }
-              else 
-              {
-                 return response()->json('invalid login');
-               }
-
-        	//echo "success";
+          return response()->json('success');
         }
         else
         {
-        	echo "login error";
+          return response()->json('error');
         }
     }
 
@@ -114,7 +85,7 @@ class UserController extends Controller
 
 		 
 
-     }
+     
 
 	
 	public function myprofile(Request $req)

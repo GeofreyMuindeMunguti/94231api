@@ -32,11 +32,9 @@ Route::get('/gymplanadd', function () {
 Route::post('students/save','StudentsController@save' );
 Route::get('/showData','StudentsController@show' );
  
+ 
 
  
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User_94231;
 use App\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -41,6 +41,12 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+    public function register(Request $request)
+    {
+        return $request;
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,9 +56,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            //'first_name' => 'required|string|max:255',
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:user_94231s',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -63,29 +69,20 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User_94231::create([
+        $data = $request->all();
+       
+        return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-    }
-        // $first_name = $req->input('first_name');
-        // $last_name = $req->input('last_name');
-        // $email = $req->input('email');
-        // $password=$req->input('password');
-        // //$password_string = mysqli_real_escape_string($_POST["password"]);
-        //       // The value of $password_hash
-        //       // should similar to the following:
-                
-        //  $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        // //$password=$req->input('password');
-        // $data = array('first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'password'=>$password_hash);
 
-        // DB::table('user_94231s')->insert($data);
- 
-        // //return response()->json($data);
-//}
+        if($data!=null)
+        {
+            return response()->json('success');
+        }
+    }
 }

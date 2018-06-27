@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>GYM API ADMIN</title>
-</head>
-<body style="background-color: grey;">
-    <div> 
-    <p align="center">Welcome to SmartGym.... Enjoy</p>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                </div>
+            </div>
+        </div>
     </div>
-    <p></p>
-</body>
-</html>
+</div>
+@endsection
