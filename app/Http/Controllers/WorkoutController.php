@@ -37,7 +37,7 @@ class WorkoutController extends Controller
    }
    public function showWorkoutall(Request $req)
    {
-    $data = user_profiles_94231()->all();
+    $data = user_profiles_94231::all();
 
     return response()->json($data);
 
