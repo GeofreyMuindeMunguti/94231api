@@ -71,7 +71,7 @@ class UserController extends Controller
         {
         	  //return response()->json($email);
         	//return response()->json($user);
-          return response()->json('error ');
+          //return response()->json('error ');
         }
     }
 
