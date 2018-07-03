@@ -73,7 +73,7 @@ class RegisterController extends Controller
     {
         $data = $request->all();
        
-        return User::create([
+         User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
@@ -82,7 +82,7 @@ class RegisterController extends Controller
 
         if($data!=null)
         {
-            return response()->json('success');
+            return response('success');
         }
     }
 }
