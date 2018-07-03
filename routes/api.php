@@ -44,7 +44,8 @@ Route::get('/showgymusers','UserController@showgymusers');//show gymusers..admin
 Route::get('/myprofile','UserController@myprofile');//view user profile...check
 Route::get('/showInstructor','InstructorController@showInstructor');//show all instructors...check
 Route::get('/showWorkout','WorkoutController@showWorkout');//shows all work out plans...check
-Route::get('/showWorkoutall','WorkoutController@showWorkoutall');
+Route::get('/showWorkoutall','WorkoutController@showWorkoutall');//show alll worlouts
+
 Route::get('/showSessions','SessionController@showSession');//user view all their sessions ...check
 Route::get('/sessionprogress','SessionController@sessionProgress');//check date of start and current date in sessions amongsth other data of the session
 
