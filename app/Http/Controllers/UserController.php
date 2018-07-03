@@ -32,10 +32,10 @@ class UserController extends Controller
               // The value of $password_hash
               // should similar to the following:
                 
-       // $password_hash = Crypt::encryptString($password);
+        $password_hash = Crypt::encryptString($password);
 		//$password=$req->input('password');
   
-        $password_hash= Hash::make('password');
+        //$password_hash= Hash::make('password');
 		$data = array('first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'password'=>$password_hash);
 
 		DB::table('user_94231s')->insert($data);
@@ -57,6 +57,8 @@ class UserController extends Controller
 	{
 	  $email=$req->input('email');
       $password=$req->input('password');
+
+      
        
 		//$user = User_94231::where('email',$email)->where('password',$password)->get();
 
