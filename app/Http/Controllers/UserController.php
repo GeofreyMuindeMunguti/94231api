@@ -68,6 +68,8 @@ class UserController extends Controller
         }
         else
         {
+        	$user = User_94231::where('email',$email)->get();
+        	return response()->json($user);
           return response()->json('error occured');
         }
     }
