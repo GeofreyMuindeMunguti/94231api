@@ -64,8 +64,8 @@ class UserController extends Controller
 
         if(Auth::attempt(['email'=>$email, 'password'=>$password]))
         {
-          //return response()->json('success');
-          echo "success"
+          return response()->json('success');
+          //echo "success"
         }
         else
         {
