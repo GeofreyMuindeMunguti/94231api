@@ -68,7 +68,7 @@ class UserController extends Controller
         }
         else
         {
-          return response()->json('error');
+          return response()->json('error occured');
         }
     }
 
