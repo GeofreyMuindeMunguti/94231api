@@ -60,7 +60,7 @@ class UserController extends Controller
 
 
        //return response()->json($email);
-		$user = User_94231::where('email',$email)->where('password',$password)->get();
+		//$user = User_94231::where('email',$email)->where('password',$password)->get();
 
         if(Auth::attempt(['email'=>$email, 'password'=>$password]))
         {
@@ -69,7 +69,7 @@ class UserController extends Controller
         else
         {
         	  //return response()->json($email);
-        	return response()->json($user);
+        	//return response()->json($user);
           return response()->json('error ');
         }
     }
