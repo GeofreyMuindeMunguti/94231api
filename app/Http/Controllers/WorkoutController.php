@@ -22,7 +22,7 @@ class WorkoutController extends Controller
 
 		DB::table('user_profiles_94231s')->insert($data);
  
-  echo "success";
+  return response("success");
 	//	return response()->json('success');
 
 	}
