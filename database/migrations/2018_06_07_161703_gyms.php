@@ -16,7 +16,8 @@ class Gyms extends Migration
         Schema::create('gym_location_94231s', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('location');
+            $table->double('location_lat');
+            $table->double('location_long');
             $table->string('activities');
             $table->rememberToken();
             $table->timestamps();
