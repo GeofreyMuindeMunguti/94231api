@@ -18,9 +18,7 @@ class SessionController extends Controller
 		$excercise_type=$req->input('excercise_type');
 		$location = $req->input('location');
 		$number_of_sets = $req->input('number_of_sets');
-		$weight_after =$req->input('weight_after');
-		$timeframe = $req->input('timeframe');
-		$data = array('date'=>$date,'email'=>$email,'excercise_type'=>$excercise_type,'location'=>$location,'number_of_sets'=>$number_of_sets,'weight_after'=>$weight_after,'timeframe'=>$timeframe);
+		$data = array('date'=>$date,'email'=>$email,'excercise_type'=>$excercise_type,'location'=>$location,'number_of_sets'=>$number_of_sets);
 
 		DB::table('sessions_94231s')->insert($data);
  
