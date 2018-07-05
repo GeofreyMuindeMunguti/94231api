@@ -47,9 +47,9 @@ class WorkoutController extends Controller
    public function showGyminlocation(Request $req)
    {
 
-   	$location = $req->input('location');
+   	//$location = $req->input('location');
 
-   	$data = Gym_location_94231::where('location',$location)->get();
+   	$data = Gym_location_94231::all();
 
    	return response()->json($data);
 

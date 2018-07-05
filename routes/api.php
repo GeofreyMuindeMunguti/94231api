@@ -33,7 +33,7 @@ Route::post('save/instructor','InstructorController@save');//register instructor
 Route::post('save/workout','WorkoutController@save');//create and save workout plan..check
 Route::post('save/session','SessionController@save');//create and save session..check
 Route::post('/loginuser','UserController@loginuser');//login the existing user
- Route::post('/register','UserController@save');//login the existing user
+Route::post('/register','UserController@save');//login the existing user
 
 
 Route::get('/gymshow','GymController@gymshow');//view all gyms..check

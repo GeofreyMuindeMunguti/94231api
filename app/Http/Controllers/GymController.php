@@ -12,9 +12,10 @@ class GymController extends Controller
 	function save(Request $req)
 	{
 		$name = $req->input('name');
-		$location =$req->input('location');
+		$location_Lat=$req->input('location_lat');
+    $location_Long=$req->input('location_long');
 		$activities=$req->input('activities');
-		$data = array('name'=>$name,'location'=>$location,'activities'=>$activities);
+		$data = array('name'=>$name,'location_lat'=>$location_lat,'location_long'=>$location_long,'activities'=>$activities);
 
 		DB::table('gym_location_94231s')->insert($data);
  
