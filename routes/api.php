@@ -48,4 +48,4 @@ Route::get('/sessionprogress','SessionController@sessionProgress');//check date 
 
 Route::get('/gyminlocation','WorkoutController@showGyminlocation');//show gyms close to user location...check
 Route::get('/gymnear','GymController@gymnear');//...check
-Route::get('/showgyminstructor','InstructorController@showgyminstructor');//show instructors in a certain gym...check
+Route::get('/showgyminstructor','InstructorController@showgymInstructor');//show instructors in a certain gym...check
